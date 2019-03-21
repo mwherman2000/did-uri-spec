@@ -41,15 +41,16 @@ I assume that the purpose of the current "DID ABNF" syntax discussions is to enc
 
 The general approach is:
 
- 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID use cases to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
+ 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID use cases from several documents (see below) to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
  2. Use the lower-level `did-url` use cases which in turn can drive the design of the `did-url` grammar (expressed at a higher level using ABNF notation) 
- 3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the `did-url` grammar
+ 3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the actual `did-url` grammar
  4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
  5. Iterate
 
 ## Guiding Principles
 
 1. Follow the Core Principles expressed in the following documents:
+
    1.1. [The #OpenToInnovation Principle: Internet protocols and standards not only need to be open, but more importantly, open to innovation](https://hyperonomy.com/2019/03/12/internet-protocols-and-standards-not-only-need-to-be-open-but-more-importantly-open-to-innovation/)
 
    1.2. [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/)
@@ -58,7 +59,7 @@ The general approach is:
    - a collection of DID Documents based on several criteria (defined in the use cases)
 3. Ensure that an app developer has the tools he/she needs to be able to effectively search, find, resolve, dereference, and execute:
    - a service endpoint associated with a service-id in a single DID Document associated with a DID.
-4. Ensure that the above operations and capabilities are expressed in a consistent did-url syntax - eliminating the need for creating additional language and/or API constructs, where possible.
+4. Ensure that the above operations and capabilities are expressed in a consistent `did-url` syntax - eliminating the need for creating additional language and/or API constructs, where possible.
 5. Ensure that the draft "DID ABNF" supports the above goals and doesn't unnecessarily restrict future innovation with respect to `did-url` parsing (and DID Resolution, specifically but not exclusively) ...that is, that the "DID ABNF" doesn't restrict the syntax patterns needed for present and future  `did-url` parsing (and DID Resolution, specifically but not exclusively) innovation. This is especially important because the current "DID ABNF" is completely defined in a different specification from the DID Resolution specification (i.e. the DID Specification).
 6. Ensure that an app developer has the tools he/she has the basic operational capabilities available to test if a DID Resolver is alive and responsive, control the format of the DID Resolver response, etc.
 7. The `did-url` use cases (the lower-level `did-url` use cases) will be guided/driven by the specific higher-level use case documents listed below. See Princple 1.2 above.
@@ -86,7 +87,7 @@ The following web app is being used to validate the `did-url` grammar against th
 
 - [The BNF Verification Service](http://arran.fi.muni.cz/bnfparser2/)
 
-## DID Doocument Examples
+## DID Document Examples
 
 1. [DID Spec - Example 16](examples\did-spec-example16.json)
 2. [INDY-ARM Example](examples\INDY-ARM-example.json)
