@@ -35,7 +35,7 @@ It was surprising to see the above pattern being proposed because the resolve an
 I assume that the purpose of the current "DID ABNF" syntax discussions is to encapsulate these types of operations into a `did-url` grammar specification. Based on this assumption, the following `did-url` patterns (and corresponding HTTP bindings) are being recommended for use as the primary patterns for the previous 2 use cases:
 
 - Resolution: `http://uniresolver.io/did:xyz:1234`
-- Dereferencing (general case): `http://uniresolver.io/did:xyz:1234#key1` and, optinoally, `http://uniresolver.io/did:xyz:1234!$selectID="key1"`
+- Dereferencing (general case): `http://uniresolver.io/did:xyz:1234#key1` and, optionally, `http://uniresolver.io/did:xyz:1234!$selectId="key1"`
 
 ### Approach
 
