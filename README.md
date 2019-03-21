@@ -99,7 +99,9 @@ Higher-level use case documents that have been selected to guide/drive the lower
 
 Checkout the spreadsheets in: https://github.com/mwherman2000/did-url-spec/tree/master/src
 
+## Impact on DID Document Grammar
 
+1. ";" is no longer needed/used in a DID Document. From a syntacical perspective, all "anchors" / "selection IDs" are prefixed with a '#' only. The semantic meaning is determined by the referring `did-url` transformer.
 
 ## `did-url` Grammar Validation Tool (Web)
 
