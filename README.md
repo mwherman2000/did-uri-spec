@@ -12,7 +12,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 ### Purpose
 
-The purpose of the document is to document the development of as well as the final version of the `did-url` grammar for Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` software parsers for use in a variety of apps and services where the `did-url` grammar is utilized:
+The purpose of the document is to document the development of as well as the final version of the `did-url` grammar for the Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used:
 
 - [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
 - DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
@@ -21,16 +21,6 @@ The purpose of the document is to document the development of as well as the fin
 ### Goals
 
 The primaary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as publish the final version of the grammar.
-
-### Approach
-
-The general approach is:
-
- 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID use cases to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
- 2. Use the lower-level use cases which in turn can drive the design of the `did-url` grammar (expressed at a high-level using ABNF notation) 
- 3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the `did-url` grammar
- 4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
- 5. Iterate
 
 ### Drivers
 
@@ -45,6 +35,16 @@ I assume that the purpose of the current "DID ABNF" syntax discussions is to enc
 
 - Resolution: http://uniresolver.io/did:xyz:1234 (Reference: w3c-ccg/did-spec#170 (comment))
 - Dereferencing (general case): http://uniresolver.io/did:xyz:1234#key1 (Reference: w3c-ccg/did-spec#170 (comment))
+
+### Approach
+
+The general approach is:
+
+ 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID use cases to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
+ 2. Use the lower-level use cases which in turn can drive the design of the `did-url` grammar (expressed at a high-level using ABNF notation) 
+ 3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the `did-url` grammar
+ 4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
+ 5. Iterate
 
 ## Guiding Principles
 
@@ -79,6 +79,12 @@ Checkout the spreadsheets in: https://github.com/mwherman2000/did-url-spec/tree/
 2. ["After Barcelona (AB)" "DID ABNF"](abnf/did-abnf-2019-03-06.abnf) - using "$" for service point `service-id` dereferencing and introducing "!" for `content-id` dereferencing
 3. `did-url-spec` version of the `did-url` grammar - work-in-progress
 
+## `did-url` Grammar Validation Tool (Web)
+
+The following web app is being used to validate the `did-url` grammar against the lower-level use cases:
+
+- [The BNF Verification Service](http://arran.fi.muni.cz/bnfparser2/)
+
 ## DID Doocument Examples
 
 1. [DID Spec - Example 16](examples\did-spec-example16.json)
@@ -90,3 +96,5 @@ Checkout the spreadsheets in: https://github.com/mwherman2000/did-url-spec/tree/
 2. Microsoft PowerShell
 3. ABNF Specification
 4. URI Specification
+5. Draft Decentralized Identifiers specification
+6. Drafft DID Resolution specificiation
