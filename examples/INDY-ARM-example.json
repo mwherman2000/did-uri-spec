@@ -1,0 +1,22 @@
+Reference: 
+https://uniresolver.io/#did=did:sov:HR6vs6GEZ8rHaVgjg2WodM
+
+{
+  "id": "did:sov:HR6vs6GEZ8rHaVgjg2WodM",
+  "service": [],
+  "authentication": {
+    "type": "Ed25519SignatureAuthentication2018",
+    "publicKey": [
+      "did:sov:HR6vs6GEZ8rHaVgjg2WodM#key-1"
+    ]
+  },
+  "publicKey": [
+    {
+      "id": "did:sov:HR6vs6GEZ8rHaVgjg2WodM#key-1",
+      "type": "Ed25519VerificationKey2018",
+      "publicKeyBase58": "~VMZDS6JkbUvxibhqr6cbT2"
+    }
+  ],
+  "@context": "https://w3id.org/did/v1"
+}
+
