@@ -67,6 +67,7 @@ The general approach is:
 ### Higher-Level Use Case Documents
 
 Higher-level use case documents that have been selected to guide/drive the lower-level `did-url` use cases:
+
 1. [Use Cases for Decentralized Identifiers](https://w3c-ccg.github.io/did-use-cases/)
 2. [Universal DID Operations](https://github.com/WebOfTrustInfo/rwot8-barcelona/blob/master/topics-and-advance-readings/Universal-DID-Operations.md)
 3. [Draft Indy feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md)
