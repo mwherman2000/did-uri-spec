@@ -21,5 +21,8 @@ Checkout the spreadsheets in: https://github.com/mwherman2000/did-url-spec/tree/
 
 ## Other References
 
-- WebDav
-- TODO
+1. [The #OpenToInnovation Principle: Internet protocols and standards not only need to be open, but more importantly, open to innovation](https://hyperonomy.com/2019/03/12/internet-protocols-and-standards-not-only-need-to-be-open-but-more-importantly-open-to-innovation/)
+2. [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/)
+3. WebDav
+4. Microsoft PowerShell
+5. TODO
