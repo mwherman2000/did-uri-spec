@@ -24,7 +24,7 @@ Update cycle: As required - sometimes several times in a single day.
     - [Lower-level `did-url` Use Cases](#lower-level-did-url-use-cases)
     - [Impact on DID Document Grammar](#impact-on-did-document-grammar)
     - [`did-url` Grammar Validation Tool (Web)](#did-url-grammar-validation-tool-web)
-    - [Appendix A - `did-url` User Case Category H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)](#appendix-a---did-url-user-case-category-h-did-url-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
+    - [ppendix A - `did-url` Use Case Category H. DID URL Service Endpoint Transformer Use Case Discussion](#appendix-a---did-url-user-case-category-h-did-url-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
     - [Appendix B - DID Document Examples](#appendix-b---did-document-examples)
     - [Appendix C - `did-url` Grammar - Previous Versions](#appendix-c---did-url-grammar---previous-versions)
     - [Appendix D - Other References](#appendix-d---other-references)
@@ -117,7 +117,9 @@ The following web app is being used to validate the `did-url` grammar against th
 
 - [The BNF Verification Service](http://arran.fi.muni.cz/bnfparser2/)
 
-## Appendix A - `did-url` User Case Category H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)
+## Appendix A - `did-url` Use Case Category H. DID URL Service Endpoint Transformer Use Case Discussion
+
+### H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)
 
 These following use cases use the "!" transformer (pipe) option and `$serviceId` transformer (pipe) option (aka `$serviceId` transformer). These tokens immediately follow is formally the text that matches be the `did` rule.  The semantics are: take the `did` text (up to the "!" pipe option) and pass it through a transformation represented by the transform options that follow the "!" transformer (pipe) option.
 
