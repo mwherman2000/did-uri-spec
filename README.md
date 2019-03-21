@@ -41,7 +41,7 @@ I assume that the purpose of the current "DID ABNF" syntax discussions is to enc
 The general approach is:
 
  1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID use cases to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
- 2. Use the lower-level use cases which in turn can drive the design of the `did-url` grammar (expressed at a high-level using ABNF notation) 
+ 2. Use the lower-level `did-url` use cases which in turn can drive the design of the `did-url` grammar (expressed at a higher level using ABNF notation) 
  3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the `did-url` grammar
  4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
  5. Iterate
