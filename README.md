@@ -18,6 +18,7 @@ Update cycle: As required - sometimes several times in a single day.
         - [Goals](#goals)
         - [Drivers](#drivers)
         - [Approach](#approach)
+        - [Status of this Specification](#status-of-this-specification)
     - [Guiding Principles](#guiding-principles)
         - [Higher-Level Use Case Documents](#higher-level-use-case-documents)
     - [Lower-level `did-url` Use Cases](#lower-level-did-url-use-cases)
@@ -70,6 +71,12 @@ The general approach is:
  3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the actual `did-url` grammar
  4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
  5. Iterate
+
+ ### Status of this Specification
+
+The status of this specification is that it is a _work-in-progress community member contribution_.  It is intended to be merged into the W3C Decentralized Idenifiers specification by reference or in it's entirety.
+
+![work-in-progress community member contribution](images/protocol-lifecycle.png)
 
 ## Guiding Principles
 
