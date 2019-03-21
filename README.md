@@ -1,4 +1,4 @@
-# did-url-spec - Decentralized Identifier URL (`did-url`) Specification
+# Decentralized Identifier URL (`did-url`) Specification (did-url-spec)
 
 _Draft document for discussion purposes_
 
