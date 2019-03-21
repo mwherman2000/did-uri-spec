@@ -22,7 +22,7 @@ Update cycle: As required - sometimes several times in a single day.
         - [Higher-Level Use Case Documents](#higher-level-use-case-documents)
     - [Lower-level `did-url` Use Cases](#lower-level-did-url-use-cases)
     - [`did-url` Grammar Validation Tool (Web)](#did-url-grammar-validation-tool-web)
-    - [Appendix A - `did-url` User Case Category H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceid transform option)](#appendix-a---did-url-user-case-category-h-did-url-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
+    - [Appendix A - `did-url` User Case Category H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)](#appendix-a---did-url-user-case-category-h-did-url-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
     - [Appendix B - DID Document Examples](#appendix-b---did-document-examples)
     - [Appendix C - `did-url` Grammar - Previous Versions](#appendix-c---did-url-grammar---previous-versions)
     - [Appendix D - Other References](#appendix-d---other-references)
@@ -49,9 +49,9 @@ The primaary goal of this specification is to document the development of the `d
 
 In the Feb. 21, 2019 DID Resolution community call, there was a early/initial discussion about using an HTTP binding pattern such as:
 
->http://uniresolver.io/resolve/did:xyz:1234
+>`http://uniresolver.io/resolve/did:xyz:1234`
 
->http://uniresolver.io/dereference/did:xyz:1234#key1
+>`http://uniresolver.io/dereference/did:xyz:1234#key1`
 
 It was surprising to see the above pattern being proposed because the resolve and dereference operations are redundant.
 
@@ -107,11 +107,11 @@ The following web app is being used to validate the `did-url` grammar against th
 
 - [The BNF Verification Service](http://arran.fi.muni.cz/bnfparser2/)
 
-## Appendix A - `did-url` User Case Category H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceid transform option)
+## Appendix A - `did-url` User Case Category H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)
 
-These following use cases use the "!" transformer (pipe) option and `$serviceid` transformer (pipe) option (aka `$serviceid` transformer). These tokens immediately follow is formally the text that matches be the `did` rule.  The semantics are: take the `did` text (up to the "!" pipe option) and pass it through a transformation represented by the transform options that follow the "!" transformer (pipe) option.
+These following use cases use the "!" transformer (pipe) option and `$serviceId` transformer (pipe) option (aka `$serviceId` transformer). These tokens immediately follow is formally the text that matches be the `did` rule.  The semantics are: take the `did` text (up to the "!" pipe option) and pass it through a transformation represented by the transform options that follow the "!" transformer (pipe) option.
 
-For example, if the transformer is `$serviceid="<service-id>"`, the effect would be to produce the resolved URL/URI for, in this case, the service endpoint corresponding `service-id`.  See the table below for more specific examples of the syntax.
+For example, if the transformer is `$serviceId="<service-id>"`, the effect would be to produce the resolved URL/URI for, in this case, the service endpoint corresponding `service-id`.  See the table below for more specific examples of the syntax.
 
 Conceptually, the processing is:
 
@@ -124,16 +124,16 @@ The subject DID document can be found in the Windley article or [here](examples/
 | Approach | Example |
 | ---------- | -------------------------- |
 | Windley | `did:sov:123456789abcdefghij;exam_svc` |
-| Transformer| `did:sov:123456789abcdefghij!$serviceid="exam_svc"` |
+| Transformer| `did:sov:123456789abcdefghij!$serviceId="exam_svc"` |
 
 Both of the above resolve (dereference) to the same URI/URL: `https://example.com/endpoint/8377464`.
 
 | Approach | Example |
 | ---------- | -------------------------- |
 | Windley | `did:sov:123456789abcdefghij;exam_svc/foo/bar?a=1#flip` |
-| Transformer | `did:sov:123456789abcdefghij!$serviceid="exam_svc"/foo/bar?a=1#flip` |
+| Transformer | `did:sov:123456789abcdefghij!$serviceId="exam_svc"/foo/bar?a=1#flip` |
 
-Both of the above resolve (dereference) to the same URI/URL: `https://example.com/endpoint/8377464/foo/bar?a=1#flip`
+Both of the above resolve (dereference) to the same URI/URL: `https://example.com/endpoint/8377464/foo/bar?a=1#flip`.
 
 NOTE: DID schemes and/or DID Resolvers can define additional transform options.  They are not limited by the syntax specification.
 
