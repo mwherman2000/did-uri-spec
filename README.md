@@ -12,7 +12,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 ### Purpose
 
-The specific purpose of the document is to document a Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` software parsers for use in a variety of apps and services where the `did-url` grammar is utilized:
+The purpose of the document is to document the development of as well as the final version of the `did-url` grammar for Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` software parsers for use in a variety of apps and services where the `did-url` grammar is utilized:
 
 - [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
 - DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
