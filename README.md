@@ -77,6 +77,7 @@ Checkout the spreadsheets in: https://github.com/mwherman2000/did-url-spec/tree/
 
 1. ["Before Barcelona (BB)" "DID ABNF"](abnf/did-abnf-2019-03-07.abnf) - using ";" for service point `service-id` dereferencing
 2. ["After Barcelona (AB)" "DID ABNF"](abnf/did-abnf-2019-03-06.abnf) - using "$" for service point `service-id` dereferencing and introducing "!" for `content-id` dereferencing
+3. `did-url-spec` version of the `did-url` grammar - work-in-progress
 
 ## DID Doocument Examples
 
