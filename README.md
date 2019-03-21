@@ -119,7 +119,7 @@ Conceptually, the processing is:
 
 Here's are 2 specific examples based on the [Windley examples](http://www.windley.com/archives/2019/02/decentralized_identifiers.shtml).  These examples also make clear the difference between the _transformer_ approach and the ';' approach.
 
-The subject DID document can be found in the Windley article or [here](examples\windley-diddoc-example.json).
+The subject DID document can be found in the Windley article or [here](examples/windley-diddoc-example.json).
 
 | Approach | Example |
 | ---------- | -------------------------- |
@@ -143,9 +143,9 @@ NOTE: Related (and reflecting the views of @dhh128 in comment https://github.com
 
 ## Appendix B - DID Document Examples
 
-1. [DID Spec - Example 16](examples\did-spec-example16.json)
-2. [INDY-ARM Example](examples\INDY-ARM-example.json)
-3. [Windley Article Example](examples\windley-diddoc-example.json)
+1. [DID Spec - Example 16](examples/did-spec-example16.json)
+2. [INDY-ARM Example](examples/INDY-ARM-example.json)
+3. [Windley Article Example](examples/windley-diddoc-example.json)
 
 ## Appendix C - `did-url` Grammar - Previous Versions
 
