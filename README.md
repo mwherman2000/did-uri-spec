@@ -8,15 +8,29 @@ _Draft document for discussion purposes_
 
 Update cycle: As required - sometimes several times in a single day.
 
-## Purpose, Goals, and Drivers
+## Purpose, Goals, Drivers, and Approach
 
 ### Purpose
 
-TODO
+The specific purpose of the document is to document a Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` software parsers for use in a variety of apps and services where the `did-url` grammar is utilized:
 
-### GOals
+- [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
+- DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
+- Agent-to-Agent (A2) Communications services in the Hyperledger Indy Agent framework - for example, the [Indy A2A feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md) 
 
-TODO
+### Goals
+
+The primaary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as publish the final version of the grammar.
+
+### Approach
+
+The general approach is:
+
+ 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID use cases to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
+ 2. Use the lower-level use cases which in turn can drive the design of the `did-url` grammar (expressed at a high-level using ABNF notation) 
+ 3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the `did-url` grammar
+ 4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
+ 5. Iterate
 
 ### Drivers
 
@@ -53,7 +67,7 @@ I assume that the purpose of the current "DID ABNF" syntax discussions is to enc
 Higher-level use case documents that have been selected to guide/drive the lower-level `did-url` use cases:
 1. [Use Cases for Decentralized Identifiers](https://w3c-ccg.github.io/did-use-cases/)
 2. [Universal DID Operations](https://github.com/WebOfTrustInfo/rwot8-barcelona/blob/master/topics-and-advance-readings/Universal-DID-Operations.md)
-3. [Indy feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md)
+3. [Draft Indy feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md)
 
 ## Lower-level `did-url` Use Cases
 
@@ -61,8 +75,8 @@ Checkout the spreadsheets in: https://github.com/mwherman2000/did-url-spec/tree/
 
 ## `did-url` Grammar - Previous Versions
 
-1. ["Before Barcelona (BB) "DID ABNF"](abnf/did-abnf-2019-03-07.abnf) - using ";" for service point `service-id` dereferencing
-2. ["After Barcelona (AB) "DID "ABNF"](abnf/did-abnf-2019-03-06.abnf) - using "$" for service point `service-id` dereferencing and introducing "!" for `content-id` dereferencing
+1. ["Before Barcelona (BB)" "DID ABNF"](abnf/did-abnf-2019-03-07.abnf) - using ";" for service point `service-id` dereferencing
+2. ["After Barcelona (AB)" "DID ABNF"](abnf/did-abnf-2019-03-06.abnf) - using "$" for service point `service-id` dereferencing and introducing "!" for `content-id` dereferencing
 
 ## DID Doocument Examples
 
