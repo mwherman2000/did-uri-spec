@@ -21,6 +21,7 @@ Update cycle: As required - sometimes several times in a single day.
     - [Guiding Principles](#guiding-principles)
         - [Higher-Level Use Case Documents](#higher-level-use-case-documents)
     - [Lower-level `did-url` Use Cases](#lower-level-did-url-use-cases)
+    - [Impact on DID Document Grammar](#impact-on-did-document-grammar)
     - [`did-url` Grammar Validation Tool (Web)](#did-url-grammar-validation-tool-web)
     - [Appendix A - `did-url` User Case Category H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)](#appendix-a---did-url-user-case-category-h-did-url-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
     - [Appendix B - DID Document Examples](#appendix-b---did-document-examples)
