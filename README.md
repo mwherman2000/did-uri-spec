@@ -12,7 +12,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 ### Purpose
 
-The purpose of the document is to document the development of as well as the final version of the `did-url` grammar for the Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used:
+The purpose of the document is to document the development of as well as the final version of the `did-url` grammar for the Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used; for example:
 
 - [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
 - DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
@@ -20,21 +20,22 @@ The purpose of the document is to document the development of as well as the fin
 
 ### Goals
 
-The primaary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as publish the final version of the grammar.
+The primaary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as to publish the final version of the grammar.
 
 ### Drivers
 
 In the Feb. 21, 2019 DID Resolution community call, there was a early/initial discussion about using an HTTP binding pattern such as:
 
 >http://uniresolver.io/resolve/did:xyz:1234
+
 >http://uniresolver.io/dereference/did:xyz:1234#key1
 
-I was surprised to see the above pattern being proposed because the resolve and dereference operations are redundant ...but that's why we have these conversations (and write things down).
+It was surprising to see the above pattern being proposed because the resolve and dereference operations are redundant.
 
-I assume that the purpose of the current "DID ABNF" syntax discussions is to encapsulate these types of operations into what we are currently calling a did-url (link). Based on these assumptions, I expected that the following did-url patterns (and corresponding HTTP bindings) will be used as the primary patterns for the previous 2 use cases:
+I assume that the purpose of the current "DID ABNF" syntax discussions is to encapsulate these types of operations into a `did-url` grammar specification. Based on this assumption, the following `did-url` patterns (and corresponding HTTP bindings) are being recommended for use as the primary patterns for the previous 2 use cases:
 
-- Resolution: http://uniresolver.io/did:xyz:1234 (Reference: w3c-ccg/did-spec#170 (comment))
-- Dereferencing (general case): http://uniresolver.io/did:xyz:1234#key1 (Reference: w3c-ccg/did-spec#170 (comment))
+- Resolution: `http://uniresolver.io/did:xyz:1234`
+- Dereferencing (general case): `http://uniresolver.io/did:xyz:1234#key1` and, optinoally, `http://uniresolver.io/did:xyz:1234!$selectID="key1"`
 
 ### Approach
 
