@@ -1,0 +1,26 @@
+{
+    "@context": "https://w3id.org/did/v1",
+    "id": "did:sov:123456789abcdefghij",
+    "publicKey": [{
+      "id": "did:sov:123456789abcdefghij#keys-1",
+      "type": "RsaVerificationKey2018",
+      "controller": "did:sov:123456789abcdefghij",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
+    }],
+    "authentication": [{
+      "type": "RsaSignatureAuthentication2018",
+      "publicKey": "did:sov:123456789abcdefghi#keys-1"
+    }],
+    "service": [{
+      "id": "did:sov:123456789abcdefghij;exam_svc",
+      "type": "ExampleService",
+      "serviceEndpoint": "https://example.com/endpoint/8377464"
+    }],
+    "created": "2018-02-08T16:03:00Z",
+    "proof": {
+      "type": "LinkedDataSignature2015",
+      "created": "2018-02-08T16:02:20Z",
+      "creator": "did:sov:8uQhQMGzWxR8vw5P3UWH1ja#keys-1",
+      "signatureValue": "QNB13Y7Q9...1tzjn4w=="
+    }
+  }
