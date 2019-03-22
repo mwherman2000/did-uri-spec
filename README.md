@@ -35,7 +35,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 ### Purpose
 
-The purpose of the document is to document the development of as well as the final version of the `did-url` grammar for the Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used; for example:
+The purpose of this specification is to document the development of as well as the final version of the `did-url` grammar for the Decentralized Identifier URL (`did-url`) Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used; for example:
 
 - [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
 - DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
@@ -45,11 +45,11 @@ This document supercedes and obsoletes DID-Resolution issue [`did-url` Use Cases
 
 ### Goals
 
-The primaary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as to publish the final version of the grammar.
+The primary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as to publish the final version of the grammar.
 
 ### Drivers
 
-In the Feb. 21, 2019 DID Resolution community call, there was a early/initial discussion about using an HTTP binding pattern such as:
+During the Feb. 21, 2019 DID Resolution community call, there was a early/initial discussion about using an HTTP binding pattern such as:
 
 >`http://uniresolver.io/resolve/did:xyz:1234`
 
@@ -74,7 +74,7 @@ The general approach is:
 
  ### Status of this Specification
 
-The status of this specification is that it is a _work-in-progress community member contribution_.  It is intended to be merged into the W3C Decentralized Idenifiers specification by reference or in it's entirety.
+The status of this specification is that it is a _work-in-progress community member contribution_.  The current intention is for this specification to be merged into the W3C Decentralized Idenifiers specification directly, by reference, or as an appendix.
 
 ![work-in-progress community member contribution](images/protocol-lifecycle.png)
 
@@ -117,7 +117,7 @@ The following web app is being used to validate the `did-url` grammar against th
 
 - [The BNF Verification Service](http://arran.fi.muni.cz/bnfparser2/)
 
-## Appendix A - `did-url` Use Case Category H. DID URL Service Endpoint Transformer Use Case Discussion
+## Appendix A - `did-url` Service Endpoint Transformer Use Cases
 
 ### H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)
 
@@ -172,4 +172,5 @@ NOTE: Related (and reflecting the views of @dhh128 in comment https://github.com
 3. ABNF Specification
 4. URI Specification
 5. Draft Decentralized Identifiers specification
-6. Draft DID Resolution specificiation
+6. Draft DID Resolution Specificiation
+7. OASIS OData Open Data Services Specification
