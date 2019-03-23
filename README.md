@@ -8,26 +8,18 @@ _Draft document for discussion purposes_
 
 Update cycle: As required - sometimes several times in a single day.
 
-## Status of this Specification
-
-- The status of this specification is that it is a (work-in-progress) _community member contribution_.  
-
-![work-in-progress community member contribution](images/protocol-lifecycle.png)
-
-- The current intention is for this specification to be merged into the W3C Decentralized Identifiers specification directly, by reference, or as an appendix.
-
 ## Table of Contents
 
 <!-- TOC -->
 
-- [Status of this Specification](#status-of-this-specification)
 - [Decentralized Identifier URL Specification (`did-url-spec`)](#decentralized-identifier-url-did-url-specification-did-url-spec)
-    - [Purpose, Goals, Drivers, and Approach](#purpose-goals-drivers-and-approach)
+    - [Purpose, Goals, Drivers, and Approach](#purpose-status-goals-drivers-and-approach)
         - [Purpose](#purpose)
+        - [Status of this Specification](#status-of-this-specification)
         - [Goals](#goals)
         - [Drivers](#drivers)
         - [Approach](#approach)
-    - [Guiding Principles](#guiding-principles)
+        - [Guiding Principles](#guiding-principles)
         - [Higher-Level Use Case Documents](#higher-level-use-case-documents)
     - [Lower-level `did-url` Use Cases](#lower-level-did-url-use-cases)
     - [Impact on DID Document Grammar](#impact-on-did-document-grammar)
@@ -39,7 +31,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 <!-- /TOC -->
 
-## Purpose, Goals, Drivers, and Approach
+## Purpose, Status, Goals, Drivers, and Approach
 
 ### Purpose
 
@@ -52,6 +44,14 @@ The purpose of this specification is to document the development of as well as t
 NOTE: This document is specification specifically for Decentralized Identifier URLs ...described by the `did-url` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
 
 This document supercedes and obsoletes DID-Resolution issue [`did-url` Use Cases: `did-url` Syntax Examples (and corresponding HTTP Binding Examples)](https://github.com/w3c-ccg/did-resolution/issues/32) - which is now closed.
+
+## Status of this Specification
+
+- The status of this specification is that it is a (work-in-progress) _community member contribution_.  
+
+![work-in-progress community member contribution](images/protocol-lifecycle.png)
+
+- The current intention is for this specification to be merged into the W3C Decentralized Identifiers specification directly, by reference, or as an appendix.
 
 ### Goals
 
@@ -82,7 +82,7 @@ The general approach is:
  4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
  5. Iterate
 
-## Guiding Principles
+### Guiding Principles
 
 1. Follow the Core Principles expressed in the following documents:
 
