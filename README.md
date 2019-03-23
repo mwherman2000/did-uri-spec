@@ -39,9 +39,9 @@ The purpose of this specification is to document the development of as well as t
 
 - [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
 - DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
-- Agent-to-Agent (A2) Communications services in the Hyperledger Indy Agent framework - for example, 
-   - the [Indy A2A feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md), and 
-   - the [Indy attachments HIPE](https://github.com/hyperledger/indy-hipe/blob/bd48bae3712e659c34d88c6dea839ccf5a0f0701/text/attachments/README.md#hipe-00-attachments).
+- Agent-to-Agent (A2) Communications services in the Hyperledger Indy Agent framework - for example,
+   - the [Indy draft feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md), and
+   - the [Indy draft attachments HIPE](https://github.com/hyperledger/indy-hipe/blob/bd48bae3712e659c34d88c6dea839ccf5a0f0701/text/attachments/README.md#hipe-00-attachments).
 
 NOTE: This document is specification specifically for Decentralized Identifier URLs ...described by the `did-url` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
 
@@ -107,8 +107,8 @@ Higher-level use case documents that have been selected to guide/drive the lower
 
 1. [Use Cases for Decentralized Identifiers](https://w3c-ccg.github.io/did-use-cases/)
 2. [Universal DID Operations](https://github.com/WebOfTrustInfo/rwot8-barcelona/blob/master/topics-and-advance-readings/Universal-DID-Operations.md)
-3. [Draft Indy feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md)
-4. [Indy attachments HIPE](https://github.com/hyperledger/indy-hipe/blob/bd48bae3712e659c34d88c6dea839ccf5a0f0701/text/attachments/README.md#hipe-00-attachments)
+3. [Indy draft feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md)
+4. [Indy draft attachments HIPE](https://github.com/hyperledger/indy-hipe/blob/bd48bae3712e659c34d88c6dea839ccf5a0f0701/text/attachments/README.md#hipe-00-attachments)
 
 ## Lower-level `did-url` Use Cases
 
