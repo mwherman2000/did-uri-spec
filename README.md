@@ -43,17 +43,17 @@ The purpose of this specification is to document the development of as well as t
    - the [Indy draft feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md), and
    - the [Indy draft attachments HIPE](https://github.com/hyperledger/indy-hipe/blob/bd48bae3712e659c34d88c6dea839ccf5a0f0701/text/attachments/README.md#hipe-00-attachments).
 
-NOTE: This document is specification specifically for Decentralized Identifier URLs ...described by the `did-url` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
-
-This document supercedes and obsoletes DID-Resolution issue [`did-url` Use Cases: `did-url` Syntax Examples (and corresponding HTTP Binding Examples)](https://github.com/w3c-ccg/did-resolution/issues/32) - which is now closed.
-
 ## Status of this Specification
 
 - The status of this specification is that it is a (work-in-progress) _community member contribution_.  
 
 ![work-in-progress community member contribution](images/protocol-lifecycle.png)
 
-- The current intention is for this specification to be merged into the W3C Decentralized Identifiers specification directly, by reference, or as an appendix.
+- The intention is for this specification to be merged into the W3C Decentralized Identifiers specification directly, by reference, or as an appendix.
+
+NOTE: This document is a specification specifically for Decentralized Identifier URLs ...described by the `did-url` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
+
+This document supercedes and obsoletes DID-Resolution issue [`did-url` Use Cases: `did-url` Syntax Examples (and corresponding HTTP Binding Examples)](https://github.com/w3c-ccg/did-resolution/issues/32) - which is now closed.
 
 ### Goals
 
