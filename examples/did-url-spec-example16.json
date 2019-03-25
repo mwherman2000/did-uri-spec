@@ -52,7 +52,7 @@
     "type": "DidAuthPushModeVersion1",
     "serviceEndpoint": "http://auth.example.com/did:example:123456789abcdefghi"
   }, {
-    "id": "did:example:123456789abcdefghi;bops",
+    "id": "did:example:123456789abcdefghi#bops",
     "type": "BopsService",
     "serviceEndpoint": "https://bops.example.com/enterprise/"
   }]

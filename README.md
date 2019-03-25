@@ -21,7 +21,7 @@ Update cycle: As required - sometimes several times in a single day.
         - [Approach](#approach)
         - [Guiding Principles](#guiding-principles)
         - [Higher-Level Use Case Documents](#higher-level-use-case-documents)
-    - [Lower-level `did-url` Use Cases](#lower-level-did-url-use-cases)
+    - [Lower-level DID User Scenarios](#lower-level-did-user-scenarios)
     - [Impact on DID Document Grammar](#impact-on-did-document-grammar)
     - [`did-url` Grammar Validation Tool (Web)](#did-url-grammar-validation-tool-web)
     - [ppendix A - `did-url` Use Case Category H. DID URL Service Endpoint Transformer Use Case Discussion](#appendix-a---did-url-user-case-category-h-did-url-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
@@ -82,7 +82,7 @@ I assume that the purpose of the current "DID ABNF" syntax discussions is to enc
 
 The general approach is:
 
- 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID use cases from several documents (see below) to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
+ 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID user scenarios from several documents (see below) to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
  2. Use the lower-level `did-url` use cases which in turn can drive the design of the `did-url` grammar (expressed at a higher level using ABNF notation) 
  3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the actual `did-url` grammar
  4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
@@ -103,7 +103,7 @@ The general approach is:
 4. Ensure that the above operations and capabilities are expressed in a consistent `did-url` syntax - eliminating the need for creating additional language and/or API constructs, where possible.
 5. Ensure that the draft "DID ABNF" supports the above goals and doesn't unnecessarily restrict future innovation with respect to `did-url` parsing (and DID Resolution, specifically but not exclusively) ...that is, that the "DID ABNF" doesn't restrict the syntax patterns needed for present and future  `did-url` parsing (and DID Resolution, specifically but not exclusively) innovation. This is especially important because the current "DID ABNF" is completely defined in a different specification from the DID Resolution specification (i.e. the DID Specification).
 6. Ensure that an app developer has the tools he/she has the basic operational capabilities available to test if a DID Resolver is alive and responsive, control the format of the DID Resolver response, etc.
-7. The `did-url` use cases (the lower-level `did-url` use cases) will be guided/driven by the specific higher-level use case documents listed below. See Princple 1.2 above.
+7. The `did-url` use cases (the lower-level `did-url` use cases) will be guided/driven by the specific higher-level DID user scenaios documents listed below. See Princple 1.2 above.
 
 ### Higher-Level Use Case Documents
 
