@@ -59,6 +59,10 @@ This document supercedes and obsoletes DID-Resolution issue [`did-url` Use Cases
 
 The primary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as to publish the final version of the grammar.
 
+### Non-goals
+
+It is not a goal of this discussion force any particular project or specifications effort to adopt this specification but it is hoped that this speciciation significantly influences the current state and all future states of the `did-url` grammar discussions.
+
 ### Drivers
 
 During the Feb. 21, 2019 DID Resolution community call, there was a early/initial discussion about using an HTTP binding pattern such as:
