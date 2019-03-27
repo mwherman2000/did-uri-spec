@@ -1,4 +1,4 @@
-# Decentralized Identifier URL Specification (`did-url-spec`)
+# Hyperonomy Universal Decentralized Identifier URL Specification (`did-url-spec`)
 
 _Draft document for discussion purposes_
 
@@ -12,7 +12,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 <!-- TOC -->
 
-- [Decentralized Identifier URL Specification (`did-url-spec`)](#decentralized-identifier-url-did-url-specification-did-url-spec)
+- [Hyperonomy Universal Decentralized Identifier URL Specification (`did-url-spec`)](#decentralized-identifier-url-did-url-specification-did-url-spec)
     - [Purpose, Goals, Drivers, and Approach](#purpose-status-goals-drivers-and-approach)
         - [Purpose](#purpose)
         - [Status of this Specification](#status-of-this-specification)
@@ -35,7 +35,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 ### Purpose
 
-The purpose of this specification is to document the development of as well as the final version of the `did-url` grammar for the Decentralized Identifier URL Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used; for example:
+The purpose of this specification is to document the development of as well as the final version of the `did-url` grammar for the Hyperonomy Universal Decentralized Identifier URL Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used; for example:
 
 - [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
 - DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
@@ -51,7 +51,7 @@ The purpose of this specification is to document the development of as well as t
 
 - The intention is for this specification to be merged into the W3C Decentralized Identifiers specification directly, by reference, or as an appendix.
 
-NOTE: This document is a specification specifically for Decentralized Identifier URLs ...described by the `did-url` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
+NOTE: This document is a specification specifically for Universal Decentralized Identifier URLs ...described by the `did-url` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
 
 This document supercedes and obsoletes DID-Resolution issue [`did-url` Use Cases: `did-url` Syntax Examples (and corresponding HTTP Binding Examples)](https://github.com/w3c-ccg/did-resolution/issues/32) - which is now closed.
 
