@@ -118,6 +118,35 @@ Higher-level use case documents that have been selected to guide/drive the lower
 
 Checkout the spreadsheets in: https://github.com/mwherman2000/did-uri-spec/tree/master/src
 
+## `did-uri-spec` Grammar
+
+```json
+; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-2019-03-28.abnf
+
+; !syntax("abnf")
+did                       = "did:" method ":" method-specific-idstring
+method                    = 1*methodchar
+methodchar                = %x61-7A / DIGIT
+method-specific-idstring  = idstring *( ":" idstring )
+idstring                  = 1*idchar
+idchar                    = ALPHA / DIGIT / "." / "-"
+
+did-uri                   = did [ transform ] [ path-abempty ] [ "?" query ] [ "#" fragment ]
+
+transform                 = PIPE transformer *( "&" transformer )
+transformer               = transformer-nameonly / transformer-namevalue
+transformer-nameonly      = "$" transformer-name
+transformer-namevalue     = "$" transformer-name "=" DOUBLEQUOTE transformer-value DOUBLEQUOTE
+transformer-name          = ALPHA 1*transform-char
+transformer-name          = *transform-char
+transformer-char          = ALPHA / DIGIT / "." / "-"
+
+ALPHA                     =  %x41-5A / %x61-7A   ; A-Z / a-z
+DIGIT                     =  %x30-39             ; 0-9
+PIPE                      =  %x21                ; !
+DOUBLEQUOTE               =  %x22                ; "
+```
+
 ## Impact on DID Document Grammar
 
 1. ";" is no longer needed/used in a DID Document. From a syntactical perspective, all "anchors" / "selection IDs" are prefixed with a '#' only. The semantic meaning is determined by the referring `did-uri` transformer.
