@@ -11,16 +11,16 @@ Update cycle: As required - sometimes several times in a single day.
 ## `did-uri-spec` Frequently Asked Questions (FAQ)
 
 1. What about Joe Andrieu's comment that a DID reference is a URI rather than a URL.
-   - At the top, everything has been renamed from `did-url` to `did-uri` - even the github project URL.
-   - THe following slide 3 has been added to the deck.  These thoughts actually do a good job og summarizing the entire rest of the presentation.
+   - At the top, everything has been renamed from `did-url` to `did-uri` - even the github project URL (https://github.com/mwherman2000/did-uri-spec).
+   - The following slide 3 has been added to the deck.  This slide actually does a good job og summarizing the entire rest of the presentation.
 
 ![did-url renamed to did-uri everywhere](images/did-url-spec-renamed-to-did-uri-spec.png)
 
 Figure 1. Slide 3
 
 2. How does the SQL example applying to the `did-uri` discussion?. Are you saying that DID dereferencing should be what, not how? 
-  - The answer is closely related to question #1 above. A SQL Server T-SQL query statement specifies _what_ is to be returned a result - not the algorithms, indices, caching strategies, physical access patterns/protocols are to be used.
-  - In this sense, if the underlying data in SQL Server data store was ummutable, a T-SQL query would also be an indentifier describing the data table to be returned - not a DID identifier but it doesn't conform the the `did-uri` gramamar.
+  - The answer is closely related to question #1 above. A SQL Server T-SQL query statement specifies _what_ is to be returned as a result - not the algorithms, indices, caching strategies, physical access patterns/protocols, enumerations that are to be used.
+  - In this sense, if the underlying data in SQL Server data store was ummutable, the text of a T-SQL query would also be a unique indentifier describing the data table to be returned - not a DID identifier but it doesn't conform the the `did-uri` gramamar - but a unique identifier just the same.
 
 ![sql example](images/sql-example-slide23.png)
 
@@ -30,7 +30,7 @@ Figure 2. Slide 23
    - See the answers to question #4 and question #5 below.
 
 4. In a later slide, you suggest `<did>!$attachmentId` as an A2A use case. The use of `attachmentId` makes total sense to me and might make me vote to ditch `nickname`--but what puzzles me is the use of <did> at the front of the expression. 
-   - I start by advocating that `nickname` be changed to `id` (or as @telegramsam suggests `@id`) and that is have a derefencible `did-uri` containing their fully-qualified `did-uri` or a relative `fragmentId`.
+   - I start by advocating that `nickname` be changed to `id` (or as @telegramsam suggests `@id`) and that it have as avalue a derefencible `did-uri` containing their fully-qualified `did-uri` or, more likely, a relative `attachmentId`
    - The above would enable derefencing of a single attachment or collection of attachments from a `DIDComm` message using a standard `did-uri` parser compliant with the `did-uri` grammar.
 
 ```json
@@ -101,7 +101,7 @@ Figure 4.1. Current `crime-scene.json`
 
 Figure 4.2. Future `crime-scene.json`
 
-NOTE: In Figure 4.2, the `nickname` attribute has been renamed and "re-valued" relative to Figure 4.1.
+NOTE: In Figure 4.2, the `nickname` attribute has been renamed and "re-valued" (relative to Figure 4.1).
 
 5. Are you imagining that a message id (@id) = a DID? Likewise, you talk about feature discovery with a filter after <did> -- but I was thinking of it as a query on an agent, which isn't a DID.
    - See the answer to question #4 above.  The answer is: yes - more likely a relative `did-uri` vs. a fully-qualified `did-uri`.
