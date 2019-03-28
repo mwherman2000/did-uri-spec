@@ -100,7 +100,7 @@ Figure 4.1. Current `crime-scene.json`
 
 Figure 4.2. Future `crime-scene.json`
 
-NOTE: The `nickname` attribute has been renamed and "re-valued".
+NOTE: In Figure 4.2, the `nickname` attribute has been renamed and "re-valued" relative to Figure 4.1.
 
 5. Are you imagining that a message id (@id) = a DID? Likewise, you talk about feature discovery with a filter after <did> -- but I was thinking of it as a query on an agent, which isn't a DID.
    - See the answer to question #4 above.  The answer is: yes - more likely a relative `did-uri` vs. a fully-qualified `did-uri`.
