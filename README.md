@@ -1,4 +1,4 @@
-# Hyperonomy Universal Decentralized Identifier URL Specification (`did-url-spec`)
+# Hyperonomy Universal Decentralized Identifier URI Specification (`did-uri-spec`)
 
 _Draft document for discussion purposes_
 
@@ -12,7 +12,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 <!-- TOC -->
 
-- [Hyperonomy Universal Decentralized Identifier URL Specification (`did-url-spec`)](#decentralized-identifier-url-did-url-specification-did-url-spec)
+- [Hyperonomy Universal Decentralized Identifier URI Specification (`did-uri-spec`)](#decentralized-identifier-uri-did-uri-specification-did-uri-spec)
     - [Purpose, Goals, Drivers, and Approach](#purpose-status-goals-drivers-and-approach)
         - [Purpose](#purpose)
         - [Status of this Specification](#status-of-this-specification)
@@ -23,10 +23,10 @@ Update cycle: As required - sometimes several times in a single day.
         - [Higher-Level Use Case Documents](#higher-level-use-case-documents)
     - [Lower-level DID User Scenarios](#lower-level-did-user-scenarios)
     - [Impact on DID Document Grammar](#impact-on-did-document-grammar)
-    - [`did-url` Grammar Validation Tool (Web)](#did-url-grammar-validation-tool-web)
-    - [Appendix A - `did-url` Use Case Category H. DID URL Service Endpoint Transformer Use Case Discussion](#appendix-a---did-url-user-case-category-h-did-url-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
+    - [`did-uri` Grammar Validation Tool (Web)](#did-uri-grammar-validation-tool-web)
+    - [Appendix A - `did-uri` Use Case Category H. DID URI Service Endpoint Transformer Use Case Discussion](#appendix-a---did-uri-user-case-category-h-did-uri-service-endpoint-transformation-use-cases-using--transformer-pipe-option-and-serviceid-transform-option)
     - [Appendix B - DID Document Examples](#appendix-b---did-document-examples)
-    - [Appendix C - `did-url` Grammar - Previous Versions](#appendix-c---did-url-grammar---previous-versions)
+    - [Appendix C - `did-uri` Grammar - Previous Versions](#appendix-c---did-uri-grammar---previous-versions)
     - [Appendix D - Other References](#appendix-d---other-references)
 
 <!-- /TOC -->
@@ -35,7 +35,7 @@ Update cycle: As required - sometimes several times in a single day.
 
 ### Purpose
 
-The purpose of this specification is to document the development of as well as the final version of the `did-url` grammar for the Hyperonomy Universal Decentralized Identifier URL Specification (the [`did-url-spec`](https://github.com/mwherman2000/did-url-spec)) - that is, a specification focused specifically on the `did-url` grammar expressed in the ABNF notation for creating executable `did-url` compliant software parsers for use in a variety of apps and services where the `did-url` grammar is used; for example:
+The purpose of this specification is to document the development of as well as the final version of the `did-uri` grammar for the Hyperonomy Universal Decentralized Identifier URI Specification (the [`did-uri-spec`](https://github.com/mwherman2000/did-uri-spec)) - that is, a specification focused specifically on the `did-uri` grammar expressed in the ABNF notation for creating executable `did-uri` compliant software parsers for use in a variety of apps and services where the `did-uri` grammar is used; for example:
 
 - [W3C Decentralized Identifier specification](https://github.com/w3c-ccg/did-spec)
 - DID Resolvers and [DID Resolution](https://github.com/w3c-ccg/did-resolution)
@@ -51,17 +51,17 @@ The purpose of this specification is to document the development of as well as t
 
 - The intention is for this specification to be merged into the W3C Decentralized Identifiers specification directly, by reference, or as an appendix.
 
-NOTE: This document is a specification specifically for Universal Decentralized Identifier URLs ...described by the `did-url` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
+NOTE: This document is a specification specifically for Universal Decentralized Identifier URIs ...described by the `did-uri` grammar using the ABNF notation. For a better understanding of these terms, read [Giving Grammars Written with ABNF Notation the Respect They Deserve](https://hyperonomy.com/2019/03/11/giving-grammars-written-with-abnf-notation-the-respect-they-deserve/).
 
-This document supercedes and obsoletes DID-Resolution issue [`did-url` Use Cases: `did-url` Syntax Examples (and corresponding HTTP Binding Examples)](https://github.com/w3c-ccg/did-resolution/issues/32) - which is now closed.
+This document supercedes and obsoletes DID-Resolution issue [`did-uri` Use Cases: `did-uri` Syntax Examples (and corresponding HTTP Binding Examples)](https://github.com/w3c-ccg/did-resolution/issues/32) - which is now closed.
 
 ### Goals
 
-The primary goal of this specification is to document the development of the `did-url-spec` version of the `did-url` grammar as well as to publish the final version of the grammar.
+The primary goal of this specification is to document the development of the `did-uri-spec` version of the `did-uri` grammar as well as to publish the final version of the grammar.
 
 ### Non-goals
 
-It is not a goal of this discussion force any particular project or specifications effort to adopt this specification but it is hoped that this speciciation significantly influences the current state and all future states of the `did-url` grammar discussions.
+It is not a goal of this discussion force any particular project or specifications effort to adopt this specification but it is hoped that this speciciation significantly influences the current state and all future states of the `did-uri` grammar discussions.
 
 ### Drivers
 
@@ -73,7 +73,7 @@ During the Feb. 21, 2019 DID Resolution community call, there was a early/initia
 
 It was surprising to see the above pattern being proposed because the resolve and dereference operations are redundant.
 
-I assume that the purpose of the current "DID ABNF" syntax discussions is to encapsulate these types of operations into a `did-url` grammar specification. Based on this assumption, the following `did-url` patterns (and corresponding HTTP bindings) are being recommended for use as the primary patterns for the previous 2 use cases:
+I assume that the purpose of the current "DID ABNF" syntax discussions is to encapsulate these types of operations into a `did-uri` grammar specification. Based on this assumption, the following `did-uri` patterns (and corresponding HTTP bindings) are being recommended for use as the primary patterns for the previous 2 use cases:
 
 - Resolution: `http://uniresolver.io/did:xyz:1234`
 - Dereferencing (general case): `http://uniresolver.io/did:xyz:1234#key1` and, optionally, `http://uniresolver.io/did:xyz:1234!$selectId="key1"`
@@ -82,10 +82,10 @@ I assume that the purpose of the current "DID ABNF" syntax discussions is to enc
 
 The general approach is:
 
- 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID user scenarios from several documents (see below) to create a comprehensive list of lower-level `did-url` use cases for the `did-url` grammar
- 2. Use the lower-level `did-url` use cases which in turn can drive the design of the `did-url` grammar (expressed at a higher level using ABNF notation) 
- 3. Use the `did-url` grammar design to drive the implementation (i.e. ABNF source code) for the actual `did-url` grammar
- 4. Validate the `did-url` grammar by testing using test cases based on the `did-url` lower-level use cases.
+ 1. Use the original architectural principles from the draft `did-spec` as well as the higher-level DID user scenarios from several documents (see below) to create a comprehensive list of lower-level `did-uri` use cases for the `did-uri` grammar
+ 2. Use the lower-level `did-uri` use cases which in turn can drive the design of the `did-uri` grammar (expressed at a higher level using ABNF notation) 
+ 3. Use the `did-uri` grammar design to drive the implementation (i.e. ABNF source code) for the actual `did-uri` grammar
+ 4. Validate the `did-uri` grammar by testing using test cases based on the `did-uri` lower-level use cases.
  5. Iterate
 
 ### Guiding Principles
@@ -100,37 +100,37 @@ The general approach is:
    - a collection of DID Documents based on several criteria (defined in the use cases)
 3. Ensure that an app developer has the tools he/she needs to be able to effectively search, find, resolve, dereference, and execute:
    - a service endpoint associated with a service-id in a single DID Document associated with a DID.
-4. Ensure that the above operations and capabilities are expressed in a consistent `did-url` syntax - eliminating the need for creating additional language and/or API constructs, where possible.
-5. Ensure that the draft "DID ABNF" supports the above goals and doesn't unnecessarily restrict future innovation with respect to `did-url` parsing (and DID Resolution, specifically but not exclusively) ...that is, that the "DID ABNF" doesn't restrict the syntax patterns needed for present and future  `did-url` parsing (and DID Resolution, specifically but not exclusively) innovation. This is especially important because the current "DID ABNF" is completely defined in a different specification from the DID Resolution specification (i.e. the DID Specification).
+4. Ensure that the above operations and capabilities are expressed in a consistent `did-uri` syntax - eliminating the need for creating additional language and/or API constructs, where possible.
+5. Ensure that the draft "DID ABNF" supports the above goals and doesn't unnecessarily restrict future innovation with respect to `did-uri` parsing (and DID Resolution, specifically but not exclusively) ...that is, that the "DID ABNF" doesn't restrict the syntax patterns needed for present and future  `did-uri` parsing (and DID Resolution, specifically but not exclusively) innovation. This is especially important because the current "DID ABNF" is completely defined in a different specification from the DID Resolution specification (i.e. the DID Specification).
 6. Ensure that an app developer has the tools he/she has the basic operational capabilities available to test if a DID Resolver is alive and responsive, control the format of the DID Resolver response, etc.
-7. The `did-url` use cases (the lower-level `did-url` use cases) will be guided/driven by the specific higher-level DID user scenaios documents listed below. See Princple 1.2 above.
+7. The `did-uri` use cases (the lower-level `did-uri` use cases) will be guided/driven by the specific higher-level DID user scenaios documents listed below. See Princple 1.2 above.
 
 ### Higher-Level Use Case Documents
 
-Higher-level use case documents that have been selected to guide/drive the lower-level `did-url` use cases:
+Higher-level use case documents that have been selected to guide/drive the lower-level `did-uri` use cases:
 
 1. [Use Cases for Decentralized Identifiers](https://w3c-ccg.github.io/did-use-cases/)
 2. [Universal DID Operations](https://github.com/WebOfTrustInfo/rwot8-barcelona/blob/master/topics-and-advance-readings/Universal-DID-Operations.md)
 3. [Indy draft feature-discovery 1.0 HIPE](https://github.com/dhh1128/indy-hipe/blob/9c7722d208cfe0a336cb67a626cbbb192ae73f8c/text/feature-discovery/README.md)
 4. [Indy draft attachments HIPE](https://github.com/hyperledger/indy-hipe/blob/bd48bae3712e659c34d88c6dea839ccf5a0f0701/text/attachments/README.md#hipe-00-attachments)
 
-## Lower-level `did-url` Use Cases
+## Lower-level `did-uri` Use Cases
 
-Checkout the spreadsheets in: https://github.com/mwherman2000/did-url-spec/tree/master/src
+Checkout the spreadsheets in: https://github.com/mwherman2000/did-uri-spec/tree/master/src
 
 ## Impact on DID Document Grammar
 
-1. ";" is no longer needed/used in a DID Document. From a syntactical perspective, all "anchors" / "selection IDs" are prefixed with a '#' only. The semantic meaning is determined by the referring `did-url` transformer.
+1. ";" is no longer needed/used in a DID Document. From a syntactical perspective, all "anchors" / "selection IDs" are prefixed with a '#' only. The semantic meaning is determined by the referring `did-uri` transformer.
 
-## `did-url` Grammar Validation Tool (Web)
+## `did-uri` Grammar Validation Tool (Web)
 
-The following web app is being used to validate the `did-url` grammar against the lower-level use cases:
+The following web app is being used to validate the `did-uri` grammar against the lower-level use cases:
 
 - [The BNF Verification Service](http://arran.fi.muni.cz/bnfparser2/)
 
-## Appendix A - `did-url` Service Endpoint Transformer Use Cases
+## Appendix A - `did-uri` Service Endpoint Transformer Use Cases
 
-### H. DID URL Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)
+### H. DID URI Service Endpoint Transformation Use Cases (using "!" transformer (pipe) option and $serviceId transform option)
 
 These following use cases use the "!" transformer (pipe) option and `$serviceId` transformer (pipe) option (aka `$serviceId` transformer). These tokens immediately follow is formally the text that matches be the `did` rule.  The semantics are: take the `did` text (up to the "!" pipe option) and pass it through a transformation represented by the transform options that follow the "!" transformer (pipe) option.
 
@@ -138,7 +138,7 @@ For example, if the transformer is `$serviceId="<service-id>"`, the effect would
 
 Conceptually, the processing is:
 
-`did-url` | transform(tranformOptions) to produce a `transformed-url`
+`did-uri` | transform(tranformOptions) to produce a `transformed-uri`
 
 Here's are 2 specific examples based on the [Windley examples](http://www.windley.com/archives/2019/02/decentralized_identifiers.shtml).  These examples also make clear the difference between the _transformer_ approach and the ';' approach.
 
@@ -170,11 +170,11 @@ NOTE: Related (and reflecting the views of @dhh128 in comment https://github.com
 2. [INDY-ARM Example](examples/INDY-ARM-example.json)
 3. [Windley Article Example](examples/windley-diddoc-example.json)
 
-## Appendix C - `did-url` Grammar - Previous Versions
+## Appendix C - `did-uri` Grammar - Previous Versions
 
 1. ["Before Barcelona (BB)" "DID ABNF"](abnf/did-abnf-2019-03-07.abnf) - using ";" for service point `service-id` dereferencing
 2. ["After Barcelona (AB)" "DID ABNF"](abnf/did-abnf-2019-03-06.abnf) - using "$" for service point `service-id` dereferencing and introducing "!" for `content-id` dereferencing
-3. `did-url-spec` version of the `did-url` grammar - work-in-progress
+3. `did-uri-spec` version of the `did-uri` grammar - work-in-progress
 
 ## Appendix D - Other References
 
