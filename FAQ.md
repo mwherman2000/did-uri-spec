@@ -27,6 +27,7 @@ Figure 1. Slide 3
 Figure 2. Slide 23
 
 3. You mention the feature discovery and attachment HIPEs as examples of higher-level DID user scenarios, but I'm not seeing the connection between them and the DID-URI spec. 
+   - See the answers to question #4 and question #5 below.
 
 4. In a later slide, you suggest `<did>!$attachmentId` as an A2A use case. The use of `attachmentId` makes total sense to me and might make me vote to ditch `nickname`--but what puzzles me is the use of <did> at the front of the expression. 
    - I start by advocating that `nickname` be changed to `id` (or as @telegramsam suggests `@id`) and that is have a derefencible `did-uri` containing their fully-qualified `did-uri` or a relative `fragmentId`.
