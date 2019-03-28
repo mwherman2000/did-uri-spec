@@ -138,7 +138,7 @@ transformer               = transformer-nameonly / transformer-namevalue
 transformer-nameonly      = "$" transformer-name
 transformer-namevalue     = "$" transformer-name "=" DOUBLEQUOTE transformer-value DOUBLEQUOTE
 transformer-name          = ALPHA 1*transform-char
-transformer-name          = *transform-char
+transformer-value         = *transform-char
 transformer-char          = ALPHA / DIGIT / "." / "-"
 
 ALPHA                     =  %x41-5A / %x61-7A   ; A-Z / a-z
