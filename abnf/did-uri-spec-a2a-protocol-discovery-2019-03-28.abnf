@@ -1,4 +1,4 @@
-; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-2019-03-28.abnf
+; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-a2a-protocol-discovery-2019-03-28.abnf
 
 ; !syntax("abnf")
 did                       = "did:" method ":" method-specific-idstring
@@ -25,5 +25,7 @@ DQUOTE                    =  %x22                ; "
 
 generic-option            = ALPHA 1*transform-char
 
-transformer-options       = generic-option
+transformer-options       = filter-option
+                          / generic-option
+filter-option             = "filter"
 
