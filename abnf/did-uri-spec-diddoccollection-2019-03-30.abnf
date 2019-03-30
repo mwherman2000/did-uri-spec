@@ -34,6 +34,7 @@ transformer-options       = documents-option
                           / generic-option
 
 documents-option          = "documents"
+exists-option             = "exists"
 
 ; Inspired by OASIS/ISO OData ABNF Construction Rules Version 4.01
 ; http://docs.oasis-open.org/odata/odata/v4.01/cs01/abnf/odata-abnf-construction-rules.txt
@@ -41,5 +42,4 @@ filter-option             = "filter"
 skip-option               = "skip"
 top-option                = "top"
 select-option             = "select"
-exists-option             = "exists"
 
