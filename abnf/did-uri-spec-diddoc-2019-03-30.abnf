@@ -1,4 +1,4 @@
-; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-diddoccollection-2019-03-30.abnf
+; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-diddoc-2019-03-28.abnf
 
 ; !syntax("abnf")
 did                       = "did:" method ":" method-specific-idstring
@@ -25,21 +25,10 @@ DQUOTE                    =  %x22                ; "
 
 generic-option            = ALPHA 1*transform-char
 
-transformer-options       = documents-option
-                          / filter-option
-                          / skip-option
-                          / top-option
-                          / select-option 
-                          / exists-option
+transformer-options       = selectid-option
+                          / serviceid-option
                           / generic-option
-
-documents-option          = "documents"
-
-; Inspired by OASIS/ISO OData ABNF Construction Rules Version 4.01
-; http://docs.oasis-open.org/odata/odata/v4.01/cs01/abnf/odata-abnf-construction-rules.txt
-filter-option             = "filter"
-skip-option               = "skip"
-top-option                = "top"
-select-option             = "select"
+selectid-option           = "selectId"
+serviceid-option          = "serviceId"
 exists-option             = "exists"
 
