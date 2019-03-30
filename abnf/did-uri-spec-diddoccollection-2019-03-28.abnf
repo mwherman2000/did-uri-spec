@@ -26,18 +26,15 @@ DQUOTE                    =  %x22                ; "
 generic-option            = ALPHA 1*transform-char
 
 transformer-options       = doctype-option
-                          / selectid-option
-                          / serviceid-option
+                          / documents-option
                           / filter-option
                           / skip-option
                           / top-option
                           / select-option 
                           / generic-option
 
-; Inherited from the diddoc DSDG
-; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-diddoc-2019-03-28.abnf
-selectid-option           = "selectId"
-serviceid-option          = "serviceId"
+doctype-option            = "doctype"
+documents-option          = "documents"
 
 ; Inspired by OASIS/ISO OData ABNF Construction Rules Version 4.01
 ; http://docs.oasis-open.org/odata/odata/v4.01/cs01/abnf/odata-abnf-construction-rules.txt
@@ -46,6 +43,4 @@ skip-option               = "skip"
 top-option                = "top"
 select-option             = "select"
 
-; Additional transformer options
-doctype-option            = "doctype"
 
