@@ -1,4 +1,4 @@
-; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-diddoc-2019-03-28.abnf
+; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-diddoccollection-2019-03-30.abnf
 
 ; !syntax("abnf")
 did                       = "did:" method ":" method-specific-idstring
