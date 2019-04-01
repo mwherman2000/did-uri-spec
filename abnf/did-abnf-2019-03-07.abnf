@@ -19,3 +19,4 @@ did-reference             = did-url / did-relative-ref
 
 ALPHA                     =  %x41-5A / %x61-7A   ; A-Z / a-z
 DIGIT                     =  %x30-39             ; 0-9
+
