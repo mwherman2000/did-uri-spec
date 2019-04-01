@@ -20,7 +20,8 @@ did-method-transform      = did-method transform
 did-root-tranform         = did-root transform
 
 transform                 = PIPE transformer *( "&" transformer )
-transformer               = transformer-nameonly / transformer-namevalue
+transformer               = transformer-nameonly 
+                          / transformer-namevalue
 transformer-nameonly      = "$" transformer-option
 transformer-namevalue     = "$" transformer-option "=" DQUOTE transformer-value DQUOTE
 transformer-option        = transformer-options
