@@ -133,17 +133,17 @@ idchar                    = ALPHA / DIGIT / "." / "-"
 
 did-uri                   = did [ transform ] [ path-abempty ] [ "?" query ] [ "#" fragment ]
 
-transform                 = PIPE transformer *( "&" transformer )
+transform                 = TRANSFORM transformer *( "&" transformer )
 transformer               = transformer-nameonly / transformer-namevalue
 transformer-nameonly      = "$" transformer-name
 transformer-namevalue     = "$" transformer-name "=" DOUBLEQUOTE transformer-value DOUBLEQUOTE
-transformer-name          = ALPHA 1*transform-char
-transformer-value         = *transform-char
+transformer-name          = ALPHA 1*transformer-char
+transformer-value         = *transformer-char
 transformer-char          = ALPHA / DIGIT / "." / "-"
 
 ALPHA                     =  %x41-5A / %x61-7A   ; A-Z / a-z
 DIGIT                     =  %x30-39             ; 0-9
-PIPE                      =  %x21                ; !
+TRANSFORM                 =  %x21                ; !
 DOUBLEQUOTE               =  %x22                ; "
 ```
 

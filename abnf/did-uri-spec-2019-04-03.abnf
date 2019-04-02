@@ -19,18 +19,18 @@ did-optional-transform    = did [ transform ] [ path-abempty ] [ "?" query ] [ "
 did-method-transform      = did-method transform
 did-root-tranform         = did-root transform
 
-transform                 = PIPE transformer *( "&" transformer )
+transform                 = TRANSFORM transformer *( "&" transformer )
 transformer               = "$" transformer-option [ "=" DQUOTE transformer-value DQUOTE ]
 transformer-option        = transformer-options
-transformer-value         = *transform-char
+transformer-value         = *transformer-char
 transformer-char          = ALPHA / DIGIT / "." / "-"
 
 ALPHA                     =  %x41-5A / %x61-7A   ; A-Z / a-z
 DIGIT                     =  %x30-39             ; 0-9
-PIPE                      =  %x21                ; !
+TRANSFORM                 =  %x21                ; !
 DQUOTE                    =  %x22                ; "
 
-generic-option            = ALPHA 1*transform-char
+generic-option            = ALPHA 1*transformer-char
 
 transformer-options       = generic-option
 
