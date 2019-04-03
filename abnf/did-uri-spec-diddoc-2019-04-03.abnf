@@ -1,4 +1,4 @@
-; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-2019-04-03.abnf
+; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-diddoc-2019-04-03.abnf
 
 ; !syntax("abnf")
 did                       = did-method method-specific-idstring
@@ -12,14 +12,10 @@ idstring                  = 1*idchar
 idchar                    = ALPHA / DIGIT / "." / "-"
 
 did-uri                   = did-optional-transform
-                          / did-method-transform
-                          / did-root-transform
                           
 did-optional-transform    = did [ transform ] [ path-abempty ] [ "?" query ] [ "#" fragment ]
-did-method-transform      = did-method transform
-did-root-tranform         = did-root transform
 
-ttransform                 = TRANSFORM transformer *( "&" transformer )
+transform                 = TRANSFORM transformer *( "&" transformer )
 transformer               = "$" transformer-option [ transformer-namedvalue ]
 transformer-namedvalue    = "=" DQUOTE transformer-value DQUOTE
 transformer-option        = transformer-options
@@ -33,5 +29,12 @@ DQUOTE                    =  %x22                ; "
 
 generic-option            = ALPHA 1*transformer-char
 
-transformer-options       = generic-option
+transformer-options       = selectid-option
+                          / serviceid-option
+                          / exists-option
+                          / generic-option
+
+selectid-option           = "selectId"
+serviceid-option          = "serviceId"
+exists-option             = "exists"
 
