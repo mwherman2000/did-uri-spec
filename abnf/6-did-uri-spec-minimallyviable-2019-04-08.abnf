@@ -1,0 +1,35 @@
+; https://github.com/mwherman2000/did-uri-spec/tree/master/abnf/did-uri-spec-minimalyviable-2019-04-03.abnf
+
+; !syntax("abnf")
+did                       = did-method method-specific-idstring
+did-method                = did-root method ":"
+did-root                  = "did" ":"
+
+method                    = 1*methodchar
+methodchar                = %x61-7A / DIGIT
+method-specific-idstring  = idstring *( ":" idstring )
+idstring                  = 1*idchar
+idchar                    = ALPHA / DIGIT / "." / "-"
+
+did-uri                   = did
+                          / did-method transform
+                          
+transform                 = TRANSFORM transformer *( "&" transformer )
+transformer               = "$" transformer-option [ transformer-namedvalue ]
+transformer-namedvalue    = "=" DQUOTE transformer-value DQUOTE
+transformer-option        = transformer-options
+transformer-value         = *transformer-char
+transformer-char          = ALPHA / DIGIT / "." / "-"
+
+ALPHA                     =  %x41-5A / %x61-7A   ; A-Z / a-z
+DIGIT                     =  %x30-39             ; 0-9
+TRANSFORM                 =  %x21                ; !
+DQUOTE                    =  %x22                ; "
+
+generic-option            = ALPHA 1*transformer-char
+
+transformer-options       = supportedCapabilities-option
+                          / generic-option                 
+
+supportedCapabilities-option = "supportedCapabilities"
+
