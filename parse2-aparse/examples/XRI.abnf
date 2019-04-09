@@ -1,0 +1,126 @@
+#----------------------------------------------------------------------------
+# XRI - V3.0
+#----------------------------------------------------------------------------
+
+xri               = xri-scheme
+                  / xri-noscheme ;
+xri-scheme        = "xri:" xri-noscheme ;
+xri-noscheme      = xri-hier-part [ "?" iquery ] [ "#" ifragment ] ;
+xri-reference     = xri
+                  / relative-xri-ref ;
+relative-xri-ref  = relative-xri-part [ "?" iquery ] [ "#" ifragment ] ;
+relative-xri-part = xri-path-abs
+                  / xri-path-noscheme
+                  / ipath-empty ;
+xri-hier-part     = xri-authority xri-path-abempty ;
+xri-authority     = global-subseg *subseg ;
+subseg            = global-subseg
+                  / local-subseg ;
+global-subseg     = gcs-char [ rel-subseg / local-subseg ] ;
+local-subseg      = lcs-char [ rel-subseg ] ;
+gcs-char          = "=" / "@" / "+" / "$" ;
+lcs-char          = "*" / "!" ;
+rel-subseg        = literal
+                  / xref ;
+rel-subseg-nc     = literal-nc
+                  / xref ;
+literal           = 1*xri-pchar ;
+literal-nc        = 1*xri-pchar-nc ;
+xref              = "(" [ xref-value ] ")" ;
+xref-value        = xri-reference
+                  / iri ;
+xri-path          = xri-path-abempty
+                  / xri-path-abs
+                  / xri-path-noscheme
+                  / ipath-empty ;
+xri-path-abempty  = *( "/" xri-segment ) ;
+xri-path-abs      = "/" [ xri-segment-nz *( "/" xri-segment ) ] ;
+xri-path-noscheme = xri-segment-nc *( "/" xri-segment ) ;
+xri-segment       = [ rel-subseg ] *subseg ;
+xri-segment-nz    = ( rel-subseg / subseg ) *subseg ;
+xri-segment-nc    = ( rel-subseg-nc / subseg ) *subseg ;
+xri-pchar         = iunreserved / pct-encoded / xri-sub-delims / ":" ;
+xri-pchar-nc      = iunreserved / pct-encoded / xri-sub-delims ;
+xri-reserved      = xri-gen-delims / xri-sub-delims ;
+xri-gen-delims    = ":" / "/" / "?" / "#" / "[" / "]" / "(" / ")"
+                  / gcs-char / lcs-char ;
+xri-sub-delims    = "&" / ";" / "," / "'" ;
+
+#------------------------------------------------------------------------
+# IRI rules
+#------------------------------------------------------------------------
+
+IRI               = scheme ":" ihier-part [ "?" iquery ]
+                  [ "#" ifragment ] ;
+scheme            = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." ) ;
+ihier-part        = "//" iauthority ipath-abempty
+                  / ipath-abs
+                  / ipath-rootless
+                  / ipath-empty ;
+iauthority        = [ iuserinfo "@" ] ihost [ ":" port ] ;
+iuserinfo         = *( iunreserved / pct-encoded / sub-delims / ":" ) ;
+ihost             = IP-literal / IPv4address / ireg-name ;
+IP-literal        = "[" ( IPv6address / IPvFuture  ) "]" ;
+IPvFuture         = "v" 1*HEXDIG "." 1*( unreserved / sub-delims / ":" ) ;
+IPv6address       =                            6( h16 ":" ) ls32
+                  /                       "::" 5( h16 ":" ) ls32
+                  / [               h16 ] "::" 4( h16 ":" ) ls32
+                  / [ *1( h16 ":" ) h16 ] "::" 3( h16 ":" ) ls32
+                  / [ *2( h16 ":" ) h16 ] "::" 2( h16 ":" ) ls32
+                  / [ *3( h16 ":" ) h16 ] "::"    h16 ":"   ls32
+                  / [ *4( h16 ":" ) h16 ] "::"              ls32
+                  / [ *5( h16 ":" ) h16 ] "::"              h16
+                  / [ *6( h16 ":" ) h16 ] "::" ;
+ls32              = ( h16 ":" h16 ) / IPv4address ;
+h16               = 1*4HEXDIG ;
+IPv4address       = dec-octet "." dec-octet "." dec-octet "." dec-octet ;
+dec-octet         = DIGIT                # 0-9
+                  / %x31-39 DIGIT        # 10-99
+                  / "1" 2DIGIT           # 100-199
+                  / "2" %x30-34 DIGIT    # 200-249
+                  / "25" %x30-35 ;       # 250-255
+ireg-name         = *( iunreserved / pct-encoded / sub-delims ) ;
+port              = *DIGIT ;
+ipath-abempty     = *( "/" isegment ) ;
+ipath-abs         = "/" [ isegment-nz *( "/" isegment ) ] ;
+ipath-rootless    = isegment-nz *( "/" isegment ) ;
+ipath-empty       = "";
+isegment          = *ipchar ;
+isegment-nz       = 1*ipchar ;
+iquery            = *( ipchar / iprivate / "/" / "?" ) ;
+iprivate          = %xE000-F8FF;
+ifragment         = *( ipchar / "/" / "?" ) ;
+ipchar            = iunreserved / pct-encoded / sub-delims / ":" / "@" ;
+iunreserved       = ALPHA / DIGIT / "-" / "." / "_" / "~" / ucschar ;
+pct-encoded       = "%" HEXDIG HEXDIG ;
+ucschar           = %xA0-D7FF / %xF900-FDCF / %xFDF0-FFEF;
+reserved          = gen-delims / sub-delims ;
+gen-delims        = ":" / "/" / "?" / "#" / "[" / "]" / "@" ;
+sub-delims        = "!" / "$" / "&" / "'" / "(" / ")"
+                  / "*" / "+" / "," / ";" / "=" ;
+unreserved        = ALPHA / DIGIT / "-" / "." / "_" / "~" ;
+
+#------------------------------------------------------------------------
+# core rules
+#------------------------------------------------------------------------
+
+ALPHA          =  %x41-5A / %x61-7A;
+BIT            =  "0" / "1";
+CHAR           =  %x01-7F;
+CR             =  %x0D;
+CRLF           =  (CR LF) / LF;
+CTL            =  %x00-1F / %x7F;
+DIGIT          =  %x30-39;
+DQUOTE         =  %x22;
+HEXDIG         =  DIGIT / "A" / "B" / "C" / "D" / "E" / "F";
+HTAB           =  %x09;
+LF             =  %x0A;
+LWSP           =  *(WSP / CRLF WSP);
+OCTET          =  %x00-FF;
+SP             =  %x20;
+VCHAR          =  %x21-7E;
+WSP            =  SP / HTAB;
+
+#----------------------------------------------------------------------------
+# end
+#----------------------------------------------------------------------------

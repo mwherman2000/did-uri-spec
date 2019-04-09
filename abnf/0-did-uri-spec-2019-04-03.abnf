@@ -19,7 +19,7 @@ did-optional-transform    = did [ transform ] [ path-abempty ] [ "?" query ] [ "
 did-method-transform      = did-method transform
 did-root-tranform         = did-root transform
 
-ttransform                 = TRANSFORM transformer *( "&" transformer )
+transform                 = TRANSFORM transformer *( "&" transformer )
 transformer               = "$" transformer-option [ transformer-namedvalue ]
 transformer-namedvalue    = "=" DQUOTE transformer-value DQUOTE
 transformer-option        = transformer-options
