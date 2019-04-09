@@ -1,0 +1,9 @@
+Clock = Hours Separator Minutes [Separator Seconds]; #Seconds optional.
+
+Hours = (%x30-31 %x30-39) / (%x32 %x30-33);
+
+Minutes = %x30-35 %x30-39;
+
+Seconds = %x30-35 %x30-39;
+
+Separator = ":";
